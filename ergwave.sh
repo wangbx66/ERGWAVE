@@ -6,15 +6,15 @@ export wlan=wlp0s29u1u7
 export eth=eno1
 
 if [ $1 = 'c' ]; then
-    sudo rfkill unblock wifi
-    echo Done rf-kill unblock
-    source ~/tools/ergwave/rcergwave
+    source ~/tools/ergwave/ergwaverc
     gsettings set org.gnome.system.proxy mode 'none'
     echo Done proxy setting
     sudo systemctl stop NetworkManager
     sudo systemctl daemon-reload
     echo Done stopping NetworkManager
     sudo pkill dhcpcd
+    sudo rfkill unblock wifi
+    echo Done rf-kill unblock
     sudo ifconfig $eth down
     sudo ifconfig $wlan up
     sudo iwconfig $wlan essid ERGWAVE
