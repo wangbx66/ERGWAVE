@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+#chromedriver
+chromedriver
+
 __pycache__/
 *.py[cod]
 
