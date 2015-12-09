@@ -29,7 +29,7 @@ Proxy(proxy_conf).add_to_capabilities(capabilities)
 driver = webdriver.PhantomJS(executable_path=os.path.join('/', 'usr', 'bin', 'phantomjs'), desired_capabilities=capabilities, service_log_path='/dev/null')
 '''
 
-driver = webdriver.Chrome(executable_path='/home/wangbx/tools/chromedriver', service_log_path='/dev/null')
+driver = webdriver.Chrome(executable_path='/home/wangbx/tools/ergwave/chromedriver', service_log_path='/dev/null')
 driver.get("http://stackoverflow.com")
  
 if not driver.title == 'Stack Overflow':
