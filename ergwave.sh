@@ -2,7 +2,7 @@
 # ifconfig in net-tools
 # iwconfig in wireless_tools
 
-export wlan=wlp0s29u1u7
+export wlan=wlp0s29u1u8u2
 export eth=eno1
 
 if [ $1 = 'c' ]; then
@@ -10,6 +10,7 @@ if [ $1 = 'c' ]; then
     gsettings set org.gnome.system.proxy mode 'none'
     echo Done proxy setting
     sudo systemctl stop NetworkManager
+    sudo systemctl mask NetworkManager
     sudo systemctl daemon-reload
     echo Done stopping NetworkManager
     sudo pkill dhcpcd
@@ -29,6 +30,8 @@ if [ $1 = 'dc' ]; then
     echo Done closing dhcp
     sudo ifconfig $wlan down
     sudo ifconfig $eth up
+    sudo systemctl unmask NetworkManager
+    sudo systemctl daemon-reload
     sudo systemctl start NetworkManager
     echo Done wifi config
     source ~/.bashrc
