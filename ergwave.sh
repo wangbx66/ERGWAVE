@@ -2,7 +2,7 @@
 # ifconfig in net-tools
 # iwconfig in wireless_tools
 
-export wlan=wlp0s29u1u8u2
+export wlan=wlp0s29u1u7
 export eth=eno1
 
 if [ $1 = 'c' ]; then
@@ -34,7 +34,6 @@ if [ $1 = 'dc' ]; then
     sudo systemctl daemon-reload
     sudo systemctl start NetworkManager
     echo Done wifi config
-    source ~/.bashrc
     gsettings set org.gnome.system.proxy mode 'manual'
     echo Done proxy setting
     echo wifi disconnection succeed
