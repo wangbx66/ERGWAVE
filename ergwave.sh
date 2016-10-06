@@ -2,11 +2,11 @@
 # ifconfig in net-tools
 # iwconfig in wireless_tools
 
-export wlan=wlp0s29u1u7
-export eth=eno1
+export wlan=wlp8s0u2
+export eth=eno2
 
 if [ $1 = 'c' ]; then
-    source ~/tools/ergwave/ergwaverc
+    source ~/Tools/ergwave/ergwaverc
     gsettings set org.gnome.system.proxy mode 'none'
     echo Done proxy setting
     sudo systemctl stop NetworkManager
@@ -22,7 +22,7 @@ if [ $1 = 'c' ]; then
     echo Done $wlan config
     sudo dhcpcd -4q $wlan
     echo Done dhcp $wlan
-    python ~/tools/ergwave/ergwave.py
+    python ~/Tools/ergwave/ergwave.py
 fi
 
 if [ $1 = 'dc' ]; then
