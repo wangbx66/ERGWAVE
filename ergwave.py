@@ -4,8 +4,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import TimeoutException
 
 def close(driver):
-    windows = driver.window_handles
-    for window in windows:
+    for window in driver.window_handles:
+        driver.switch_to_window(t)
         driver.close()
 
 if __name__ == '__main__':
