@@ -19,7 +19,7 @@ if __name__ == '__main__':
             print('Failed')
     else:
         if 'edirect' in driver.page_source:
-            time.sleep(5)
+            time.sleep(8)
         elm = driver.find_element_by_name('user')
         elm.send_keys('bxwang')
         elm = driver.find_element_by_name('password')
