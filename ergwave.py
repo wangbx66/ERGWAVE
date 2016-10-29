@@ -5,7 +5,7 @@ from selenium.common.exceptions import TimeoutException
 
 def close(driver):
     for window in driver.window_handles:
-        driver.switch_to_window(t)
+        driver.switch_to_window(window)
         driver.close()
 
 if __name__ == '__main__':
